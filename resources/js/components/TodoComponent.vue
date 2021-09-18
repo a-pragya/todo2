@@ -1,35 +1,27 @@
 <template>
     <div>
-    <form @submit.prevent="saveData" class="needs-validation" >
-    <div class="input-group mb-3" >
-  <input v-model="newTodo.title" type="text" class="form-control form-control-lg" placeholder="Enter todo" required >
-  <button class="btn btn-success" type="submit" id="button-addon2">Add</button>
-</div>
-
-    </form>
-    <div v-for="todo in todos" :key="todo.id" >
-       <div class="card mt-2">
-  
-  <div class="card-body">
-    <h5 class="card-title text-center">{{todo.title}}</h5>
-    
-    <div class="text-center">
-    <button @click="deleteTodo(todo.id)" class="btn btn-outline-danger btn-small">Delete</button>
-  </div>
-  </div>
-</div>
-    </div>
-
-     </div>
+        <form @submit.prevent="saveData" class="needs-validation" >
+            <div class="input-group mb-3" >
+                <input v-model="newTodo.title" type="text" class="form-control form-control-lg" placeholder="Enter todo" required >
+                <button class="btn btn-success" type="submit" id="button-addon2">Add</button>
+            </div>
+        </form>
+        <div v-for="todo in todos" :key="todo.id" >
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{todo.title}}</h5>
+                        <div class="text-center">
+                            <button @click="deleteTodo(todo.id)" class="btn btn-outline-danger btn-small">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
 </template>
 
 
 <script>
-
-
-
-
     export default {
         data(){
             return{

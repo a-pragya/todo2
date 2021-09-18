@@ -40,15 +40,7 @@ class TodoController extends Controller
             'title' => $request->input('title')]);
         $todo->save();
         }
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Todo  $todo
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Todo $todo)
     {
         //
@@ -88,7 +80,6 @@ class TodoController extends Controller
         $todo = Todo::find($id);
         $todo->delete();
         return Todo::latest()->get();
-        
-
+    
     }
 }
